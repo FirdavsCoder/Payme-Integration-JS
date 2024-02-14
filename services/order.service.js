@@ -13,7 +13,7 @@ class OrderService {
 
 	async create(data) {
 		const { products, user } = data;
-
+		
 		const userExist = await this.userRepo.getById(user);
 		if (!userExist) throw new BaseError(ErrorCodes.UserNotFound, 404);
 
